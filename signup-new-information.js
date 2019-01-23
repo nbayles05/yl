@@ -1,7 +1,6 @@
 //import waitForKeyElements from 'https://gist.github.com/raw/2625891/waitForKeyElements.js';
 //import faker from 'https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.js';
 
-
 /*--- waitForKeyElements():  A utility function, for Greasemonkey scripts,
     that detects and handles AJAXed content.
 
