@@ -1,5 +1,5 @@
-require('https://gist.github.com/raw/2625891/waitForKeyElements.js');
-require('https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.js');
+import {waitForKeyElements } from 'https://gist.github.com/raw/2625891/waitForKeyElements.js';
+import {faker} from 'https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.js';
 
 function setInputValue(selector, value) {
     angular.element(selector).val(value);
