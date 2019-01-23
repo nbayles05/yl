@@ -52866,9 +52866,9 @@ function waitForKeyElements (
     function loginInfo(jNode) {
         setInputValue("[name='userName']", "YL"+Date.now().toString());
     
-        setInputValue("[name='password']", "Pa$$w0rd1");
-        setInputValue("[name='confirmPassword']", "Pa$$w0rd1");
-        console.log("password=Pa$$w0rd");
+        setInputValue("[name='password']", "Password1");
+        setInputValue("[name='confirmPassword']", "Password1");
+        console.log("password=Password1");
     
         setInputValue("[name='pin']", "1111");
         setInputValue("[name='confirmPin']", "1111");
