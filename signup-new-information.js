@@ -1,4 +1,4 @@
-$("head").append('<script type="text/javascript" src="https://gist.github.com/raw/2625891/waitForKeyElements.js"></script>');
+$("head").append('<script type="text/javascript" src="https://raw.githubusercontent.com/BrockA/2625891/raw/9c97aa67ff9c5d56be34a55ad6c18a314e5eb548/waitForKeyElements.js"></script>');
 $("head").append('<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.js"></script>');
 
 
