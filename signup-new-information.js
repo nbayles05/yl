@@ -52827,7 +52827,7 @@ function waitForKeyElements (
         if (Math.floor(Math.random() * 100) % 2 === 0) {
             setInputValue("[name='middleName']", faker.name.firstName());
         }
-        setInputValue("[name='lastName']", faker.name.lastName());
+        setInputValue("[name='lastName']", "QATEST");
     }
     
     var addressRun = false;
