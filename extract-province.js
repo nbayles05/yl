@@ -5,23 +5,25 @@ $('#province option').each(function () {
 
 
 var infos = [];
-var i = provinces[13];
-$.post("zipcode-municipality.php", { id: i }, function (data) {
-    var rex = RegExp("<\s*li[^>]*>(.*?)<\s*/\s*li>", "g");
-    
-    var rexResult;
-    do {
-        rexResult = rex.exec(data);
-        if (rexResult) {
-            // var info = {
-            //     postalCode: extractPostalCode(rexResult[0]),
-            //     city: extractCity(rexResult[0]),
-            //     province: extractProvince(rexResult[0])
-            // }            ;
-            var info = [extractPostalCode(rexResult[0]), extractCity(rexResult[0]), extractProvince(rexResult[0])];
-            infos.push(info);
-        }
-    } while (rexResult);    
+//var i = provinces[13];
+provinces.forEach(i => {
+    $.post("zipcode-municipality.php", { id: i }, function (data) {
+        var rex = RegExp("<\s*li[^>]*>(.*?)<\s*/\s*li>", "g");
+
+        var rexResult;
+        do {
+            rexResult = rex.exec(data);
+            if (rexResult) {
+                // var info = {
+                //     postalCode: extractPostalCode(rexResult[0]),
+                //     city: extractCity(rexResult[0]),
+                //     province: extractProvince(rexResult[0])
+                // }            ;
+                var info = [extractPostalCode(rexResult[0]), extractCity(rexResult[0]), extractProvince(rexResult[0])];
+                infos.push(info);
+            }
+        } while (rexResult);
+    });
 });
 
 // infos.forEach(info => {
