@@ -9,7 +9,7 @@ var i = arr[1];
 	$.post("zipcode-municipality.php", {id:i}, function(data) {
 		console.log(data);
     var rex = RegExp("<\s*li[^>]*>(.*?)<\s*/\s*li>", "g");
-    console.log(rex.match(data))
+    console.log(rex.exec(data))
 	});
 //});
 
