@@ -1,5 +1,5 @@
 var provinces = [];
-$('#province option').each(function () {
+$('#province option').each(function () { 
     provinces.push($(this).val());
 });
 
