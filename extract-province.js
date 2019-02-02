@@ -3,18 +3,30 @@ $('#province option').each(function() {
 	provinces.push($(this).val());
 });
 
+var infos = [];
 var i = provinces[13];
 	$.post("zipcode-municipality.php", {id:i}, function(data) {
 	var rex = RegExp("<\s*li[^>]*>(.*?)<\s*/\s*li>", "g");
-	var rexResult = rex.exec(data);
+		
+		
+	var rexResult;
+	do {
+    		rexResult = rex.exec(data);
+    		if (rexResult) {
+        		var info = {
+				postalCode: extractPostalCode(rexResult[0]),
+				city: extractCity(rexResult[0]),
+				province: extractProvince(rexResult[0])
+			};
+			infos.push(info);
+    		}
+	} while (rexResult);	
 	
-	var info = {
-		postalCode: extractPostalCode(rexResult[0]),
-		city: extractCity(rexResult[0]),
-		province: extractProvince(rexResult[0])
-	};
 	
-	console.log(info);
+});
+
+infos.forEach(info => {
+	console.log('"'+info.postalCode+'","'+info.city+'","'+info.province+'"');
 });
 
 function extractPostalCode(input) {
