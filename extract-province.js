@@ -9,7 +9,7 @@ var i = arr[1];
 	$.post("zipcode-municipality.php", {id:i}, function(data) {
 		//console.log(data);
     		var rex = RegExp("<\s*li[^>]*>(.*?)<\s*/\s*li>", "g");
-    		var rexResult = rex.exec(data);
+    		var rexResult = rex.exec(data); 
 		console.log(rexResult);
 		//var str = rexResult[1];
 		//var id = str.substring(str.indexOf("<strong>")+8, str.indexOf("</strong>"));
