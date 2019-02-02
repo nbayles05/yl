@@ -1,9 +1,9 @@
-var arr = [];
+var provinces = [];
 $('#province option').each(function() {
-	arr.push($(this).val());
+	provinces.push($(this).val());
 });
 
-var i = arr[1];
+var i = provinces[13];
 	$.post("zipcode-municipality.php", {id:i}, function(data) {
 	var rex = RegExp("<\s*li[^>]*>(.*?)<\s*/\s*li>", "g");
 	var rexResult = rex.exec(data);
@@ -26,5 +26,5 @@ function extractCity(input) {
 }
 
 function extractProvince(input) {
-	input.substring(input.indexOf(" ,")+2, input.indexOf("</li>"));
+	return input.substring(input.indexOf(" ,")+2, input.indexOf("</li>"));
 }
