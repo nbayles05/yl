@@ -21,10 +21,10 @@ $.post("zipcode-municipality.php", { id: i }, function (data) {
             infos.push(info);
         }
     } while (rexResult);
-});
 
-infos.forEach(info => {
-    console.log('"' + info.postalCode + '","' + info.city + '","' + info.province + '"');
+    infos.forEach(info => {
+        console.log('"' + info.postalCode + '","' + info.city + '","' + info.province + '"');
+    });
 });
 
 function extractPostalCode(input) {
