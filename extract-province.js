@@ -8,8 +8,13 @@ console.log(arr);
 var i = arr[1];
 	$.post("zipcode-municipality.php", {id:i}, function(data) {
 		console.log(data);
-    var rex = RegExp("<\s*li[^>]*>(.*?)<\s*/\s*li>", "g");
-    console.log(rex.exec(data))
+    		var rex = RegExp("<\s*li[^>]*>(.*?)<\s*/\s*li>", "g");
+    		var rexResult = rex.exec(data);
+		var str = rexResult[1];
+		var id = str.substring(str.indexOf("<strong>")+8, str.indexOf("</strong>"));
+		var city = str.substring(str.indexOf(" - ")+3, str.indexOf(" ,"));
+		var province = str.substring(str.indexOf(" ,")+2, str.indexOf("</li>"));
+		console.log(id,city,province);
 	});
 //});
 
